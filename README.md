@@ -25,7 +25,6 @@ Built with:
 Currently, the server and client are **already running** in the background of your workspace! You can test them immediately by opening:
 👉 **[http://localhost:5173](http://localhost:5173)**
 
-*Default secret passcode:* **`pookie123`**
 
 ### Starting Manually
 
