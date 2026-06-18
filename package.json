@@ -1,0 +1,13 @@
+{
+  "name": "watch-with-pookie",
+  "version": "1.0.0",
+  "description": "Private movie night room for two",
+  "scripts": {
+    "install-all": "npm install --prefix server && npm install --prefix client",
+    "build": "npm run install-all && npm run build --prefix client",
+    "start": "npm run start --prefix server"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

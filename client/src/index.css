@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Pacifico&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+  --font-title: 'Pacifico', cursive;
+  --font-headers: 'Fredoka', sans-serif;
+  --font-body: 'Quicksand', sans-serif;
+
+  /* Ultra Premium Dark Mode Pookie Palette */
+  --bg-gradient: radial-gradient(circle at 50% 50%, #1a0f2b 0%, #0d0c11 50%, #050505 100%);
+  --pookie-pink-light: #250917;
+  --pookie-pink-medium: #4c1130;
+  --pookie-pink: #FF69B4;
+  --pookie-pink-dark: #d63384;
+  --pookie-pink-accent: #FF80BF;
+  --pookie-lavender-light: #160d2b;
+  --pookie-lavender: #C8A2FF;
+  --pookie-blue-light: #061124;
+  --pookie-blue: #90caf9;
+  --pookie-cream: #141118;
+  --pookie-text: #ffe5e9; /* High-contrast soft white/pink */
+  --pookie-text-light: #c8a2ff; /* Highly readable secondary lavender */
+  --pookie-white: #ffffff;
+  
+  /* Glassmorphism Styles for Dark Mode (Apple Vision Pro Inspired) */
+  --glass-bg: rgba(16, 16, 16, 0.65);
+  --glass-bg-hover: rgba(37, 21, 61, 0.75);
+  --glass-bg-dark: rgba(5, 5, 5, 0.9);
+  --glass-border: rgba(255, 105, 180, 0.2);
+  --glass-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.75), 0 0 20px rgba(255, 105, 180, 0.06);
+  --glass-shadow-inset: inset 0 1px 2px rgba(255, 255, 255, 0.08);
+  --blur-amount: blur(20px);
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pookie-pink) rgba(255, 255, 255, 0.02);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pookie-pink-medium);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pookie-pink);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--pookie-text);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headers);
+  font-weight: 600;
+  color: var(--pookie-text);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur-amount);
+  -webkit-backdrop-filter: var(--blur-amount);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), var(--glass-shadow-inset);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-smooth);
+}
+
+.glass-panel-hover:hover {
+  background: var(--glass-bg-hover);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.7), var(--glass-shadow-inset);
+  transform: translateY(-2px);
+  border-color: rgba(255, 143, 163, 0.3);
+}
+
+.glass-input {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(18, 9, 23, 0.6);
+  border: 2px solid rgba(255, 143, 163, 0.25);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--pookie-text);
+  outline: none;
+  transition: var(--transition-smooth);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.glass-input:focus {
+  border-color: var(--pookie-pink);
+  background: rgba(18, 9, 23, 0.95);
+  box-shadow: 0 0 12px rgba(255, 143, 163, 0.35);
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 229, 233, 0.45);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--pookie-pink) 0%, var(--pookie-pink-dark) 100%);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-headers);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--pookie-white);
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  transform: scale(1.03) translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 77, 109, 0.6);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  background: #4a3d41;
+  color: #887a7d;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 143, 163, 0.3);
+  border-radius: var(--radius-md);
+  font-family: var(--font-headers);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--pookie-pink);
+  cursor: pointer;
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 143, 163, 0.15);
+  transform: translateY(-1px);
+  color: var(--pookie-white);
+  border-color: var(--pookie-pink);
+}
+
+/* Floating Webcams */
+.webcams-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.webcam-card {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--pookie-pink);
+  background-color: #0d0611;
+  box-shadow: 0 0 15px rgba(255, 143, 163, 0.3);
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.webcam-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 25px rgba(255, 143, 163, 0.6);
+  border-color: var(--pookie-white);
+}
+
+.webcam-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.webcam-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pookie-text-light);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+}
+
+.webcam-label {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 0.6rem;
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Keyframes & Utility Animations */
+@keyframes heartFloat {
+  0% {
+    transform: translateY(100vh) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); }
+  20%, 40%, 60%, 80% { transform: translateX(6px); }
+}
+
+.shake-animation {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.pulse-heart {
+  animation: pulse-heart 2s infinite ease-in-out;
+}
+
+/* Floating reactions overlay wrapper */
+.reaction-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Video Wrapper */
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--glass-shadow);
+}
+
+.video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Typing Indicator Styling */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--pookie-white);
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: rgba(255, 77, 109, 0.25);
+  width: fit-content;
+}
+
+.typing-dot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--pookie-white);
+  border-radius: 50%;
+  animation: typing-bounce 1s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Bonk Overlay Animation */
+@keyframes bonk-impact {
+  0% { transform: translate(-50%, -50%) scale(0) rotate(-45deg); opacity: 0; }
+  50% { transform: translate(-50%, -50%) scale(1.2) rotate(15deg); opacity: 1; }
+  70% { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+}
+
+.bonk-hammer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  animation: bonk-impact 0.8s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Popcorn Shower Animation */
+@keyframes popcorn-fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.falling-popcorn {
+  position: fixed;
+  font-size: 28px;
+  pointer-events: none;
+  z-index: 999;
+  animation: popcorn-fall 3.5s linear forwards;
+}
+
+/* Sparkle CSS decoration */
+.sparkle-element {
+  position: absolute;
+  pointer-events: none;
+  animation: sparkle-glow 1.5s infinite ease-in-out;
+}
+
+@keyframes sparkle-glow {
+  0%, 100% { transform: scale(0.6); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes pulse-ring {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.15), 0 0 10px rgba(200, 162, 255, 0.1);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 45px rgba(255, 105, 180, 0.45), 0 0 25px rgba(200, 162, 255, 0.25);
+  }
+}

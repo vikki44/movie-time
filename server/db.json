@@ -1,0 +1,16 @@
+{
+  "rooms": {
+    "default-room": {
+      "password": "pookie123",
+      "createdAt": "2026-06-18T02:48:08.581Z"
+    },
+    "pookie-den": {
+
+    }
+  },
+  "messages": {
+    "default-room": [
+    
+    ]
+  }
+}
